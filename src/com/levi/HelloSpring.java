@@ -13,4 +13,14 @@ public class HelloSpring
 	{
 		System.out.println(new StringBuilder("Your message: ").append(message));
 	}
+	
+	public void initialize()
+	{
+		System.out.println("I'm initializing.");
+	}
+	
+	public void destroy()
+	{
+		System.out.println("I'm going away now.");
+	}
 }
