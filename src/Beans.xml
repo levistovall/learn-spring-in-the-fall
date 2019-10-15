@@ -5,11 +5,12 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
    <bean 
-   		id = "helloSpring" 
-   		class = "com.levi.HelloSpring" 
-   		init-method = "initialize"
-   		destroy-method = "destroy">
+      id = "helloSpring" 
+      class = "com.levi.HelloSpring" 
+      init-method = "initialize"
+      destroy-method = "destroy">
       <property name = "message" value = "I want to live in Amsterdam."/>
    </bean>
 
+   <bean class = "com.levi.InitHelloSpring" />
 </beans>
