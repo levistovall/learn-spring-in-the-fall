@@ -37,7 +37,7 @@ public class StudentJDBCTemplate implements StudentDataAccessObject
 
 	public Student getStudent(Integer id)
 	{
-		Student student = jdbcTemplateObject.queryForObject(
+		Student student = (Student) jdbcTemplateObject.queryForObject(
 				SELECT_SQL_, 
 				new Object[] {id}, 
 				new StudentMapper());

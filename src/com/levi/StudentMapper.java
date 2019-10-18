@@ -2,9 +2,9 @@ package com.levi;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
-public class StudentMapper implements RowMapper<Student>
+public class StudentMapper implements ParameterizedRowMapper<Student>
 {
 	private final static String ID_COLUMN_NAME_ = "id";
 	private final static String NAME_COLUMN_NAME_ = "name";
