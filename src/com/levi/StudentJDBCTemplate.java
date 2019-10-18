@@ -31,7 +31,7 @@ public class StudentJDBCTemplate implements StudentDataAccessObject
 
 	public void create(String name, Integer age)
 	{
-		jdbcTemplateObject.update(CREATE_SQL_, name, age);
+		jdbcTemplateObject.update(CREATE_SQL_, new Object[] {name, age});
 		System.out.println("Created Student record Name = " + name + " Age = " + age);
 	}
 
@@ -54,13 +54,13 @@ public class StudentJDBCTemplate implements StudentDataAccessObject
 
 	public void delete(Integer id)
 	{
-		jdbcTemplateObject.update(DELETE_SQL_, id);
+		jdbcTemplateObject.update(DELETE_SQL_, new Object[]{id});
 		System.out.println("Deleted Student record with ID = " + id);
 	}
 	
 	public void update(Integer id, Integer age)
 	{
-		jdbcTemplateObject.update(UPDATE_SQL_, age, id);
+		jdbcTemplateObject.update(UPDATE_SQL_, new Object[]{age, id});
 		System.out.println("Updated Student record with ID = " + id);
 	}
 }
