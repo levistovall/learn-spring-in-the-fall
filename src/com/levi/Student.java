@@ -33,7 +33,7 @@ public class Student
 	
 	public void setName(String aName)
 	{
-		
+		name = aName;
 	}
 	
 }
