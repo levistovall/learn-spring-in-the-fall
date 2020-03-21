@@ -10,7 +10,7 @@
       <property name = "driverClassName" value = "com.mysql.jdbc.Driver"/>
       <property name = "url" value = "jdbc:mysql://localhost:3306/home_db"/>
       <property name = "username" value = "home_network_user"/>
-      <property name = "password" value = "Ghidl&amp;zvjhlhi"/>
+      <property name = "password" value = "homenwuserpw"/>
    </bean>
 
    <bean 
