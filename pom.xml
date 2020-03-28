@@ -81,7 +81,7 @@
       </plugin>
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
-        <artifactId>tomcat8-maven-plugin</artifactId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
         <configuration>
           <port>8081</port>
@@ -90,11 +90,11 @@
       </plugin>
     </plugins>
   </build>
-  <pluginRepositories>
+  <!-- pluginRepositories>
     <pluginRepository>
       <id>icm</id>
       <name>Spring Framework Milestone Repository</name>
       <url>http://maven.icm.edu.pl/artifactory/repo</url>
     </pluginRepository>
-  </pluginRepositories>
+  </pluginRepositories -->
 </project>
