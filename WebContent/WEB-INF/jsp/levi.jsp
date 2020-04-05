@@ -1,10 +1,11 @@
 <%@ page contentType = "text/html; charset = UTF-8" %>
 <html>
    <head>
-      <title>Hello World</title>
+      <title>Students</title>
    </head>
    
    <body>
-      <h2>${message}</h2>
+      <h2>Student DB Interface</h2>
+      <a href="viewstudents">Show Students</a>
    </body>
 </html>
