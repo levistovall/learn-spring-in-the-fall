@@ -9,7 +9,7 @@
    <td>${student.id}</td>  
    <td>${student.name}</td>  
    <td>${student.age}</td>  
-   <td><a href="editstudent/${student.id}">Edit</a></td>  
+   <td><a href="editstudent/${student.id}">Edit </a></td>  
    </tr>  
    </c:forEach>  
    </table>  
