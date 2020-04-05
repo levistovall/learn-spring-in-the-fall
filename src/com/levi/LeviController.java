@@ -10,6 +10,6 @@ import org.springframework.ui.ModelMap;
 public class LeviController {
    @RequestMapping(method = RequestMethod.GET)public String printHello(ModelMap model) {
       model.addAttribute("message", "I don't know what I'm doing!");
-      return "hello";
+      return "levi";
    }
 }
