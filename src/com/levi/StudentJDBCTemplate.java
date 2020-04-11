@@ -3,6 +3,8 @@ package com.levi;
 import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
+import com.google.gson.Gson;
+
 public class StudentJDBCTemplate implements StudentDataAccessObject 
 {
 	private DataSource dataSource;
@@ -50,6 +52,12 @@ public class StudentJDBCTemplate implements StudentDataAccessObject
 				LIST_ALL_SQL_, 
 				new StudentMapper());
 		return students;
+	}
+
+	public String listStudentsAsJsonString()
+	{
+		Gson gsonObj = new Gson();
+		return gsonObj.toJson(listStudents());
 	}
 
 	public void delete(Integer id)

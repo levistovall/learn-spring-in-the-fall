@@ -29,4 +29,10 @@ public class LeviController
 		model.addAttribute("list", list);
 		return "viewall";
 	}
+
+	@RequestMapping(value="/getstudents", method=RequestMethod.GET)
+	public String getAllStudents(ModelMap model)
+	{
+		return template.listStudentsAsJsonString();
+	}
 }

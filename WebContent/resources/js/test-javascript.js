@@ -8,6 +8,10 @@
       // instantiates the pie chart, passes in the data and
       // draws it.
       function drawChart() {
+    	  var xmlhttp = new XMLHttpRequest();
+    	  xmlhttp.open("GET", "getstudents");
+    	  xmlhttp.send();
+    	  document.getElementById("json_test").innerHTML = xmlhttp.responseText;
 
         // Create the data table.
         var data = new google.visualization.DataTable();
