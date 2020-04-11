@@ -31,7 +31,7 @@ public class LeviController
 		return "viewall";
 	}
 
-	@RequestMapping(value="/getstudents", method=RequestMethod.GET, produces="text,plain")
+	@RequestMapping(value="/getstudents", method=RequestMethod.GET, produces="text/plain")
 	@ResponseBody
 	public String getAllStudents(ModelMap model)
 	{
