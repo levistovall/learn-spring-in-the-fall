@@ -3,7 +3,7 @@
    <head>
       <title>Here's an Index Page</title>
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-      <script type="text/javascript" src="js/test-javascript.js"></script>
+      <script type="text/javascript" src="resources/js/test-javascript.js"></script>
    </head>
    
    <body>
