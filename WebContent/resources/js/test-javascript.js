@@ -10,8 +10,11 @@
       function drawChart() {
     	  var xmlhttp = new XMLHttpRequest();
     	  xmlhttp.open("GET", "getstudents");
+    	  xmlhttp.onreadystatechange = function()
+    	  {
+        	  document.getElementById("json_test").innerHTML = xmlhttp.responseText;
+    	  }
     	  xmlhttp.send();
-    	  document.getElementById("json_test").innerHTML = xmlhttp.responseText;
 
         // Create the data table.
         var data = new google.visualization.DataTable();
