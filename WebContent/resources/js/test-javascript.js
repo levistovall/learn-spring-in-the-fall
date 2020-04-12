@@ -12,70 +12,73 @@
     	  xmlhttp.open("GET", "getstudents");
     	  xmlhttp.onreadystatechange = function()
     	  {
-    		  var studentsAsJsonObj = JSON.parse(xmlhttp.responseText);
-
-    		  var numTweens = 0;
-    		  var numTeens = 0;
-    		  var numYoungAdults = 0;
-    		  var num25to40 = 0;
-    		  var num40to65 = 0;
-    		  var numSeniors = 0;
-    		  
-    		  var student;
-    		  for(student in studentsAsJsonObj)
+    		  if(this.readyState == 4 && this.status ==200)
     		  {
-    			  if(student.age < 13)
-    			  {
-    				  numTweens++;
-    			  }
-    			  else if(student.age < 18)
-    			  {
-    				  numTeens++;
-    			  }
-    			  else if(student.age < 25)
-    			  {
-    				  numYoungAdults++;
-    			  }
-    			  else if(student.age < 40)
-    			  {
-    				  num25to40++;
-    			  }
-    			  else if(student.age < 65)
-    			  {
-    				  num40to65++;
-    			  }
-    			  else
-    			  {
-    				  numSeniors++;
-    			  }
+        		  var studentsAsJsonObj = JSON.parse(this.responseText);
+
+        		  var numTweens = 0;
+        		  var numTeens = 0;
+        		  var numYoungAdults = 0;
+        		  var num25to40 = 0;
+        		  var num40to65 = 0;
+        		  var numSeniors = 0;
+        		  
+        		  var student;
+        		  for(student in studentsAsJsonObj)
+        		  {
+        			  if(student.age < 13)
+        			  {
+        				  numTweens++;
+        			  }
+        			  else if(student.age < 18)
+        			  {
+        				  numTeens++;
+        			  }
+        			  else if(student.age < 25)
+        			  {
+        				  numYoungAdults++;
+        			  }
+        			  else if(student.age < 40)
+        			  {
+        				  num25to40++;
+        			  }
+        			  else if(student.age < 65)
+        			  {
+        				  num40to65++;
+        			  }
+        			  else
+        			  {
+        				  numSeniors++;
+        			  }
+        		  }
+        		  
+        		  var data = new google.visualization.DataTable();
+        		  
+        		  data.addColumn('string', 'Age Group');
+        		  data.addColumn('number', 'Number of Students');
+        		  
+        		  data.addRows(
+        				  [["Tweens", numTweens],
+        				  ["Teens", numTeens],
+        				  ["Young Adults", numYoungAdults],
+        				  ["25 to 39", num25to40],
+        				  ["40 to 64", num40to65],
+        				  ["Seniors", numSeniors]]
+        				  );
+
+        		  
+        		  // Set chart options
+        		  var options = {
+        				  chart: {
+        					  title: 'Students By Age Group'
+        				  },
+        				  bars: 'horizontal' // Required for Material Bar Charts.
+        		  };
+
+        		  var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        		  chart.draw(data, google.charts.Bar.convertOptions(options));
     		  }
-    		  
-    		  var data = new google.visualization.DataTable();
-    		  
-    		  data.addColumn('string', 'Age Group');
-    		  data.addColumn('number', 'Number of Students');
-    		  
-    		  data.addRows(
-    				  ["Tweens", numTweens],
-    				  ["Teens", numTeens],
-    				  ["Young Adults", numYoungAdults],
-    				  ["25 to 39", num25to40],
-    				  ["40 to 64", num40to65],
-    				  ["Seniors", numSeniors]
-    				  );
-
-    		  
-    		  // Set chart options
-    		  var options = {
-    				  chart: {
-    					  title: 'Students By Age Group'
-    				  },
-    				  bars: 'horizontal' // Required for Material Bar Charts.
-    		  };
-
-    		  var chart = new google.charts.Bar(document.getElementById('barchart_material'));
-
-    		  chart.draw(data, google.charts.Bar.convertOptions(options));
     	  }
     	  xmlhttp.send();
 
