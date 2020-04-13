@@ -77,5 +77,6 @@
         		  var chart = new google.visualization.PieChart(document.getElementById('barchart_material'));
         		  chart.draw(data, options);
     		  }
+              xmlhttp.send();
     	  }
       }
