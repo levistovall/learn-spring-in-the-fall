@@ -23,9 +23,10 @@
         		  var num40to65 = 0;
         		  var numSeniors = 0;
         		  
-        		  var student;
-        		  for(student in studentsAsJsonObj)
+        		  var i;
+        		  for(i = 0; i < studentsasJsonObj; i++)
         		  {
+        			  var student = studentsasJsonObj[i];
         			  if(student.age < 13)
         			  {
         				  numTweens++;
