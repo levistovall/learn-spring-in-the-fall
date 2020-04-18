@@ -1,10 +1,11 @@
-package com.levi;
+package main.java;
 
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import com.levi.StudentJDBCTemplate;
+
+import main.java.StudentJDBCTemplate;
 
 public class MainApp 
 {

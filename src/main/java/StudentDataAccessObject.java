@@ -1,4 +1,4 @@
-package com.levi;
+package main.java;
 
 import java.util.List;
 import javax.sql.DataSource;

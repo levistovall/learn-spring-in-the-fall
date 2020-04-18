@@ -1,4 +1,4 @@
-package com.levi;
+package main.java;
 
 public class Student 
 {
