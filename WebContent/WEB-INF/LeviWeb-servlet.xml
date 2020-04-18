@@ -10,8 +10,8 @@
    http://www.springframework.org/schema/mvc/spring-mvc.xsd"
    xmlns:mvc="http://www.springframework.org/schema/mvc">
 
-   <context:component-scan base-package = "main.java" />
-   <context:property-placeholder location="classpath:webapp.application.properties" />
+   <!-- context:component-scan base-package = "main.java" /> -->
+   <context:property-placeholder location="classpath:application.properties" />
 
    <bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
       <property name = "prefix" value = "/WEB-INF/jsp/" />
