@@ -105,11 +105,4 @@
       </plugin>
     </plugins>
   </build>
-  <!-- pluginRepositories>
-    <pluginRepository>
-      <id>icm</id>
-      <name>Spring Framework Milestone Repository</name>
-      <url>http://maven.icm.edu.pl/artifactory/repo</url>
-    </pluginRepository>
-  </pluginRepositories -->
 </project>
