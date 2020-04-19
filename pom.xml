@@ -4,66 +4,66 @@
   <artifactId>LeviWeb</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-  <!-- parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.1.6.RELEASE</version>
-  </parent-->
+  <properties>
+    <taglibs-version>1.2.5</taglibs-version>
+    <spring-version>5.2.5.RELEASE</spring-version>
+    <mysql-connector-version>8.0.16</mysql-connector-version>
+    <gson-version>2.8.6</gson-version>
+    <maven-war-plugin-version>2.4</maven-war-plugin-version>
+    <tomcat-plugin-version>2.2</tomcat-plugin-version>
+  </properties>
+  
   <packaging>war</packaging>
   <dependencies>
     <dependency>
       <groupId>org.apache.taglibs</groupId>
       <artifactId>taglibs-standard-impl</artifactId>
-      <version>1.2.5</version>
+      <version>${taglibs-version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.taglibs</groupId>
       <artifactId>taglibs-standard-spec</artifactId>
-      <version>1.2.5</version>
+      <version>${taglibs-version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>5.2.5.RELEASE</version>
+      <version>${spring-version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>5.2.5.RELEASE</version>
+      <version>${spring-version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
-      <version>5.2.5.RELEASE</version>
+      <version>${spring-version}</version>
     </dependency>
-    <!-- dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency> -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.16</version>
+      <version>${mysql-connector-version}</version>
     </dependency>
     <dependency>
         <groupId>com.google.code.gson</groupId>
         <artifactId>gson</artifactId>
-        <version>2.8.6</version>
+      <version>${gson-version}</version>
     </dependency>
   </dependencies>
   <build>
-    <sourceDirectory>src</sourceDirectory>
+    <!-- sourceDirectory>src</sourceDirectory>
     <resources>
       <resource>
         <directory>src</directory>
       </resource>
-    </resources>
+    </resources-->
     <plugins>
-      <plugin>
-        <!-- Build an executable JAR -->
+      <!-- plugin>
+         #Build an executable JAR 
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <!-- version>3.1.0</version> -->
+        <version>3.1.0</version>
         <configuration>
           <archive>
             <manifest>
@@ -73,10 +73,10 @@
             </manifest>
           </archive>
         </configuration>
-      </plugin>
+      </plugin-->
       <plugin>
          <artifactId>maven-war-plugin</artifactId>
-         <version>2.4</version>
+         <version>${maven-war-plugin-version}</version>
          <configuration>
             <warSourceDirectory>WebContent</warSourceDirectory>
             <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -90,14 +90,14 @@
           <target>1.8</target>
         </configuration>
       </plugin>
-      <plugin>
+      <!-- plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
+      </plugin-->
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
-        <version>2.2</version>
+        <version>${tomcat-plugin-version}</version>
         <configuration>
           <port>8081</port>
           <path>/LeviWeb</path>
