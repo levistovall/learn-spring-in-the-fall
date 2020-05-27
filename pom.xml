@@ -12,7 +12,6 @@
     <maven-war-plugin-version>2.4</maven-war-plugin-version>
     <maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
     <tomcat-plugin-version>2.2</tomcat-plugin-version>
-    <sql-maven-plugin-version>3.0.0-SNAPSHOT</sql-maven-plugin-version>
   </properties>
   
   <packaging>war</packaging>
@@ -75,9 +74,9 @@
           <url>jdbc:mysql://localhost:3306/home_db</url>
           <user>home_network_user</user>
           <password>homenwuserpw</password>
-          <schemas>
+          <!-- schemas>
             <schema>create-goals-schema.sql</schema>
-          </schemas>
+          </schemas -->
         </configuration>
       </plugin>
       <!-- plugin>
