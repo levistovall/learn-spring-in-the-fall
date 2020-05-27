@@ -74,7 +74,7 @@
           <url>jdbc:mysql://localhost:3306/home_db</url>
           <user>home_network_user</user>
           <password>homenwuserpw</password>
-          <!-- schemas>
+          <!-- schemas >
             <schema>create-goals-schema.sql</schema>
           </schemas -->
         </configuration>
