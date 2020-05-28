@@ -75,6 +75,7 @@
           <user>home_network_user</user>
           <password>homenwuserpw</password>
           <baselineOnMigrate>true</baselineOnMigrate>
+          <baselineVersion>0</baselineVersion>
           <!-- schemas >
             <schema>create-goals-schema.sql</schema>
           </schemas -->

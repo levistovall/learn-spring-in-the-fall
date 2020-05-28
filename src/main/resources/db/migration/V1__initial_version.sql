@@ -64,7 +64,7 @@ CREATE TABLE `goal_collaborators` (
 
 ALTER TABLE `goals` ADD FOREIGN KEY (`owner_id`) REFERENCES `users` (`id`);
 
-ALTER TABLE `goal_types` ADD FOREIGN KEY (`type_name`) REFERENCES `goals` (`goal_type`);
+ALTER TABLE `goals` ADD FOREIGN KEY (`goal_type`) REFERENCES `goal_types` (`type_name`);
 
 ALTER TABLE `goal_hierarchy` ADD FOREIGN KEY (`parent_id`) REFERENCES `goals` (`id`);
 
