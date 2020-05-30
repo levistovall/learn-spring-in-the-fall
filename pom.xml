@@ -12,6 +12,7 @@
     <maven-war-plugin-version>2.4</maven-war-plugin-version>
     <maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
     <tomcat-plugin-version>2.2</tomcat-plugin-version>
+    <flyway-maven-plugin-version>6.4.2</flyway-maven-plugin-version>
   </properties>
   
   <packaging>war</packaging>
@@ -69,7 +70,7 @@
       <plugin>
         <groupId>org.flywaydb</groupId>
         <artifactId>flyway-maven-plugin</artifactId>
-        <version>6.4.2</version>
+        <version>${flyway-maven-plugin-version}</version>
         <configuration>
           <url>jdbc:mysql://localhost:3306/home_db</url>
           <user>home_network_user</user>

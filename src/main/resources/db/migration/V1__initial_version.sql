@@ -88,3 +88,18 @@ ALTER TABLE `user_defined_goal_attr_types` ADD FOREIGN KEY (`attr_name`) REFEREN
 
 ALTER TABLE `user_defined_goal_attr_types` ADD FOREIGN KEY (`goal_type`) REFERENCES `goal_types` (`type_name`);
 
+ALTER TABLE `goal_types`
+ADD CONSTRAINT announcement_validUntil_check
+CHECK (
+    CASE
+        WHEN extends IS NOT NULL
+        THEN
+            CASE
+                WHEN extends in (select gt.type_name from goal_types gt where gt.type_name <> type_name
+                THEN 1
+                ELSE 0
+            END
+        ELSE 1
+    END = 1
+);
+
