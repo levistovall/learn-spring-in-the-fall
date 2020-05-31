@@ -31,6 +31,13 @@ CREATE TABLE `goal_types` (
   `last_updated` timestamp
 );
 
+CREATE TABLE `goal_type_extensions` (
+  `extended_type_name` varchar(255),
+  `extending_type_name` varchar(255) PRIMARY KEY,
+  `created_at` timestamp,
+  `last_updated` timestamp
+);
+
 CREATE TABLE `goal_hierarchy_rules` (
   `parent_type_name` varchar(255),
   `child_type_name` varchar(255),
@@ -66,6 +73,10 @@ ALTER TABLE `goals` ADD FOREIGN KEY (`owner_id`) REFERENCES `users` (`id`);
 
 ALTER TABLE `goals` ADD FOREIGN KEY (`goal_type`) REFERENCES `goal_types` (`type_name`);
 
+ALTER TABLE `goal_type_extensions` ADD FOREIGN KEY (`extending_type_name`) REFERENCES `goal_types` (`type_name`);
+
+ALTER TABLE `goal_type_extensions` ADD FOREIGN KEY (`extended_type_name`) REFERENCES `goal_types` (`type_name`);
+
 ALTER TABLE `goal_hierarchy` ADD FOREIGN KEY (`parent_id`) REFERENCES `goals` (`id`);
 
 ALTER TABLE `goal_hierarchy` ADD FOREIGN KEY (`child_id`) REFERENCES `goals` (`id`);
@@ -87,19 +98,3 @@ ALTER TABLE `goal_collaborators` ADD FOREIGN KEY (`user_id`) REFERENCES `users` 
 ALTER TABLE `user_defined_goal_attr_types` ADD FOREIGN KEY (`attr_name`) REFERENCES `user_defined_goal_attrs` (`attr_name`);
 
 ALTER TABLE `user_defined_goal_attr_types` ADD FOREIGN KEY (`goal_type`) REFERENCES `goal_types` (`type_name`);
-
-ALTER TABLE `goal_types`
-ADD CONSTRAINT announcement_validUntil_check
-CHECK (
-    CASE
-        WHEN extends IS NOT NULL
-        THEN
-            CASE
-                WHEN extends in (select gt.type_name from goal_types gt where gt.type_name <> type_name)
-                THEN 1
-                ELSE 0
-            END
-        ELSE 1
-    END = 1
-);
-
