@@ -95,7 +95,7 @@ CHECK (
         WHEN extends IS NOT NULL
         THEN
             CASE
-                WHEN extends in (select gt.type_name from goal_types gt where gt.type_name <> type_name
+                WHEN extends in (select gt.type_name from goal_types gt where gt.type_name <> type_name)
                 THEN 1
                 ELSE 0
             END
