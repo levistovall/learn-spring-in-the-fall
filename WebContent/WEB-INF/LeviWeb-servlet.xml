@@ -28,8 +28,8 @@
    </bean>
 
    <bean 
-      id = "studentJDBCTemplate" 
-      class = "main.java.StudentJDBCTemplate">
+      id = "goalJDBCTemplate" 
+      class = "main.java.GoalJDBCTemplate">
       <property name = "dataSource" ref = "dataSource"/>
    </bean>
    
