@@ -26,9 +26,9 @@ public class LeviController
 
 	@RequestMapping(value="/creategoal", method=RequestMethod.POST)
 	public String createGoal(
-			@RequestParam String title,
-			@RequestParam String description,
-			@RequestParam String goalType
+			@RequestParam(name = "title") String title,
+			@RequestParam(name = "description") String description,
+			@RequestParam(name = "goalType") String goalType
 			)
 	{
 		template.create(title, description, goalType);
