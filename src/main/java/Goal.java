@@ -1,5 +1,3 @@
-package main.java;
-
 public class Goal 
 {
 	public enum Status
