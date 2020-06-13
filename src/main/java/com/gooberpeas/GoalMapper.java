@@ -1,3 +1,4 @@
+package com.gooberpeas;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;

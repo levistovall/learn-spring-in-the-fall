@@ -1,3 +1,4 @@
+package com.gooberpeas;
 public class Goal 
 {
 	public enum Status
