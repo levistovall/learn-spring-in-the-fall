@@ -10,7 +10,7 @@
    http://www.springframework.org/schema/mvc/spring-mvc.xsd"
    xmlns:mvc="http://www.springframework.org/schema/mvc">
 
-   <context:component-scan base-package = "main.java" />
+   <context:component-scan base-package = "" />
    <context:property-placeholder location="classpath:application.properties" />
 
    <bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
