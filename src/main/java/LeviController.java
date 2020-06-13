@@ -25,12 +25,8 @@ public class LeviController
 		return "levi";
 	}
 
-	@RequestMapping(value="/LeviWeb/creategoal", method=RequestMethod.POST)
+	@RequestMapping(value="/creategoal", method = RequestMethod.POST)
 	public ResponseEntity<HttpStatus> createGoal(@RequestBody Goal goal)
-			/*@RequestParam(name = "title") String title,
-			@RequestParam(name = "description") String description,
-			@RequestParam(name = "goalType") String goalType
-			)*/
 	{
 		template.create(goal.getTitle(), goal.getDescription(), goal.getGoalType());
 		return ResponseEntity.ok(HttpStatus.OK);
